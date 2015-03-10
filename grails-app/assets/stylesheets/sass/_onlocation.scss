@@ -1,0 +1,27 @@
+// Main Layout
+.ol-layout-content {
+	margin-top: 75px;
+}
+// Login
+#ol-page-nonauth {
+	background-image: url('../../images/ol-login-bg.jpg');
+	background-size: cover;
+}
+.ol-login-container {
+	margin-top: 5%;
+}
+.ol-error-text {
+	font-weight: bolder;
+}
+.ol-error-status {
+	font-size: 4em;
+}
+.ol-error-message {
+	font-size: 2em;
+}
+
+// Dashboard
+
+.ol-header-brand {
+	max-height: 100%;
+}
