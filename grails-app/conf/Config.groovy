@@ -132,6 +132,7 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/':                              ['permitAll'],
 	'/**':                            ['IS_AUTHENTICATED_FULLY'],
 	'/index':                         ['permitAll'],
+	'/dbconsole':                     ['permitAll'],
 	'/index.gsp':                     ['permitAll'],
 	'/assets/**':                     ['permitAll'],
 	'/**/js/**':                      ['permitAll'],
@@ -140,4 +141,11 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/**/favicon.ico':                ['permitAll']
 ]
 grails.plugin.springsecurity.logout.postOnly = false
-grails.plugins.springsecurity.successHandler.defaultTargetUrl = "/dashboard"
+grails.plugin.springsecurity.successHandler.defaultTargetUrl = "/dashboard"
+grails.plugin.springsecurity.filterChain.chainMap = [
+	'/api/**': 'JOINED_FILTERS,-exceptionTranslationFilter,-authenticationProcessingFilter,-securityContextPersistenceFilter,-rememberMeAuthenticationFilter',  // Stateless chain
+	'/**': 'JOINED_FILTERS,-restTokenValidationFilter,-restExceptionTranslationFilter'                                                                          // Traditional chain
+]
+grails.plugin.springsecurity.rest.login.useJsonCredentials = true
+grails.plugin.springsecurity.rest.token.storage.useGorm = true
+grails.plugin.springsecurity.rest.token.storage.gorm.tokenDomainClassName = 'com.onlocation.auth.AuthenticationToken'

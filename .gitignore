@@ -5,6 +5,7 @@ grails-app/assets/components/
 lib/
 bin/
 node_modules/
+.classpath
 *.iws
 *Db.properties
 *Db.script

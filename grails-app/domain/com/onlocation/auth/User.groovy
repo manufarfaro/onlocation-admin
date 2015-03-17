@@ -20,6 +20,7 @@ class User {
 
 	static mapping = {
 		password column: '`password`'
+		tablePerHierarchy false
 	}
 
 	Set<Role> getAuthorities() {
