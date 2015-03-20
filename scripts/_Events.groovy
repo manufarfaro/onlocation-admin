@@ -10,10 +10,10 @@ eventCompileStart = {
 
 private void installFrontendDependencies() {
 	println "| Install Js Packages..."
-	def proc = "npm install".execute()  // execute default task to load dependencies from local cache.
-	proc.waitFor()
+	def procNpm = "npm install".execute()  // execute default task to load dependencies from local cache.
+	procNpm.waitFor()
 	println "| Installing Dependencies..."
-	def proc = "bower install".execute()  // execute default task to load dependencies from local cache.
-	proc.waitFor()
+	def procBower = "bower install".execute()  // execute default task to load dependencies from local cache.
+	procBower.waitFor()
 	println "| Frontend Dependencies Finished."
 }
