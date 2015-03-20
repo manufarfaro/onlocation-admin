@@ -21,6 +21,7 @@ class User {
 	static mapping = {
 		password column: '`password`'
 		tablePerHierarchy false
+		reviews cascade: "all-delete-orphan"
 	}
 
 	Set<Role> getAuthorities() {

@@ -6,6 +6,7 @@ class Role {
 
 	static mapping = {
 		cache true
+		reviews cascade: "all-delete-orphan"
 	}
 
 	static constraints = {

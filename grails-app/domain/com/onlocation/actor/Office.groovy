@@ -10,6 +10,7 @@ class Office extends User{
 
 	static mapping = {
 		belongsTo joinTable: [name: "mm_comerce_office", key: 'mm_comerce_id', column: 'mm_office_id' ]
+		reviews cascade: "all-delete-orphan"
 	}
 	
 	static mappedBy = [comerce: "offices"]

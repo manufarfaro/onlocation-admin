@@ -6,7 +6,6 @@ import com.onlocation.actor.Office;
 import com.onlocation.auth.UserRole;
 
 import grails.util.Environment;
-import grails.plugin.fixtures.FixtureLoader;
 
 class BootStrap {
 
