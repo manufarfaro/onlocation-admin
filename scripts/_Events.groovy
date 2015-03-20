@@ -14,8 +14,10 @@ private void installFrontendDependencies() {
 	procNpm.waitFor()
 	def procBower = "npm install -g bower".execute()
 	procBower.waitFor()
+	println "| ----------- #{'pwd'.execute().waitFor()}"
+	
 	println "| Installing Dependencies..."
-	def procBowerInstall = "/app/tmp/cache/node_modules/bower/bin/bower install".execute()
+	def procBowerInstall = "node_modules/bower/bin/bower install".execute()
 	procBowerInstall.waitFor()
 	println "| Frontend Dependencies Finished."
 }
