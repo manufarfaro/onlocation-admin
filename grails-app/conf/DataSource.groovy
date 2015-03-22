@@ -18,6 +18,7 @@ environments {
 			driverClassName = "org.h2.Driver"
 			username = "sa"
 			password = ""
+			logSql = true
             dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
             url = "jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE"
         }
@@ -30,6 +31,7 @@ environments {
 				url = "jdbc:h2:mem:testDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE"
 			} else {
 				dbCreate = "create-drop"
+				logSql = true
 				driverClassName = "org.postgresql.Driver"
 				dialect = org.hibernate.dialect.PostgreSQLDialect
 				uri = new URI(System.env.DATABASE_URL?:"postgres://onlocation:onlocation@localhost/onlocation")
