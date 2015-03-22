@@ -22,6 +22,7 @@ class User {
 		password column: '`password`'
 		tablePerHierarchy false
 		reviews cascade: "all-delete-orphan"
+		table "users"
 	}
 
 	Set<Role> getAuthorities() {

@@ -1,4 +1,4 @@
-grails.servlet.version = "2.5" // Change depending on target container compliance (2.5 or 3.0)
+grails.servlet.version = "3.0" // Change depending on target container compliance (2.5 or 3.0)
 grails.project.class.dir = "target/classes"
 grails.project.test.class.dir = "target/test-classes"
 grails.project.test.reports.dir = "target/test-reports"
@@ -51,14 +51,14 @@ grails.project.dependency.resolution = {
     dependencies {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
         // runtime 'mysql:mysql-connector-java:5.1.29'
-        runtime 'org.postgresql:postgresql:9.3-1101-jdbc41'
+        runtime 'org.postgresql:postgresql:9.4-1201-jdbc41'
         test "org.grails:grails-datastore-test-support:1.0-grails-2.4"
     }
 
     plugins {
         // plugins for the build system only
-        //build ":tomcat:7.0.55"
-		build ":jetty:2.0.3"
+        build ":tomcat:7.0.55"
+		//build ":jetty:3.0.0"
 
         // plugins for the compile step
         compile ":scaffolding:2.1.2"

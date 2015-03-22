@@ -32,7 +32,7 @@ environments {
 				dbCreate = "create-drop"
 				driverClassName = "org.postgresql.Driver"
 				dialect = org.hibernate.dialect.PostgreSQLDialect
-				uri = new URI(System.env.DATABASE_URL?:"postgres://test:test@localhost/test")
+				uri = new URI(System.env.DATABASE_URL?:"postgres://onlocation:onlocation@localhost/onlocation")
 				url = "jdbc:postgresql://"+uri.host+uri.path
 				username = uri.userInfo.split(":")[0]
 				password = uri.userInfo.split(":")[1]
@@ -42,12 +42,8 @@ environments {
     production {
         dataSource {
 			dbCreate = "update"
-			driverClassName = "org.postgresql.Driver"
+			jndiName = "jdbc/onlocation"
 			dialect = org.hibernate.dialect.PostgreSQLDialect
-			uri = new URI(System.env.DATABASE_URL?:"postgres://test:test@localhost/test")
-			url = "jdbc:postgresql://"+uri.host+uri.path
-			username = uri.userInfo.split(":")[0]
-			password = uri.userInfo.split(":")[1]
             properties {
                // See http://grails.org/doc/latest/guide/conf.html#dataSource for documentation
                jmxEnabled = true

@@ -98,7 +98,7 @@ environments {
     }
     production {
         grails.logging.jul.usebridge = false
-        grails.serverURL = "http://www.onlocation.com.ar"
+        grails.serverURL = "http://app.onlocation.com.ar/"
     }
 }
 
